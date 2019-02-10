@@ -1,0 +1,51 @@
+
+
+$padding-micro: 2px;
+$padding-mini: 4px;
+$padding-very-small: 8px;
+$padding-small: 12px;
+$padding-normal: 16px;
+$padding-big: 24px;
+$padding-large: 32px;
+$padding-extra-lagre: 36px;
+$padding-enormus: 40px;
+
+@mixin for-size($range) {
+  $phone-upper-boundary: 600px;
+  $tablet-portrait-upper-boundary: 900px;
+  $tablet-landscape-upper-boundary: 1200px;
+  $desktop-upper-boundary: 1800px;
+
+  @if $range == phone-only {
+    @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
+  } @else if $range == tablet-portrait-up {
+    @media (min-width: $phone-upper-boundary) { @content; }
+  } @else if $range == tablet-landscape-up {
+    @media (min-width: $tablet-portrait-upper-boundary) { @content; }
+  } @else if $range == desktop-up {
+    @media (min-width: $tablet-landscape-upper-boundary) { @content; }
+  } @else if $range == big-desktop-up {
+    @media (min-width: $desktop-upper-boundary) { @content; }
+  }
+}
+$blue-50: #e3e9ff;
+$blue-100: #b8c8fe;
+$blue-200: #89a4fe;
+$blue-300: #597ffd;
+$blue-400: #3663fc;
+$blue-500: #1041fc;
+$blue-600: #1041fc;
+$blue-700: #1041fc;
+$blue-800: #0a30fb;
+$blue-900: #0521fa;
+
+$orange-50: #fff8e3;
+$orange-100: #feeeb8;
+$orange-200: #fee289;
+$orange-300: #fdd659;
+$orange-400: #fcc512;
+$orange-500: #fcc512;
+$orange-600: #fcbf10;
+$orange-700: #fbb80d;
+$orange-800: #fbb00a;
+$orange-900: #faa305;
